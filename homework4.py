@@ -4,7 +4,6 @@ if palindrome == palindrome[ : :-1]:
         print(f'yayy, it is a palindrome')
 else:
         print('that is not a palindrome, try again')
-        
 
 #task 2 - type text + reserved words, change reserved words from lowercase to uppercase
 #nebudu herečkovat, u tohohle tasku muselo pomoct AI, sama bych to nikdy nesplácala dohromady:D
