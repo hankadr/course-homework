@@ -126,25 +126,39 @@
 # print(is_palindrome(123321))
 # print(is_palindrome(123456))
 
-def print_square(side_length, symbol, is_solid):
-    if side_length < 1:
-        print("Side length must be at least 1.")
-        return
+# # 
+# tuple1 = (1, 2, 3, 4)
+# tuple2 = (3, 4, 5, 6)
+# tuple3 = (6, 7, 8, 1)
 
-    if is_solid:
-        for _ in range(side_length):
-            print(symbol * side_length)
-    else:
-        for i in range(side_length):
-            if i == 0 or i == side_length - 1:
-                print(symbol * side_length)
-            else:
-                print(symbol + " " * (side_length - 2) + symbol)
+# set1 = set(tuple1)
+# set2 = set(tuple2)
+# set3 = set(tuple3)
 
-print_square(5, '*', True)  # Solid square
-print()
-print_square(5, '*', False)  # Empty square    
+# unique1 = set1 - set2 - set3  
+# unique2 = set2 - set1 - set3  
+# unique3 = set3 - set1 - set2  
 
+# print("Unique to tuple1:", unique1)
+# print("Unique to tuple2:", unique2)
+# print("Unique to tuple3:", unique3)
 
+# Define the three tuples
+tuple1 = (1, 2, 3, 4)
+tuple2 = (1, 5, 3, 6)
+tuple3 = (1, 9, 3, 8)
+
+# Use zip to iterate over corresponding elements in all tuples
+common_elements = [
+    tuple1[i]
+    for i, (a, b, c) in enumerate(zip(tuple1, tuple2, tuple3))
+    if a == b == c
+]
+
+# Convert to a tuple if needed
+common_elements = tuple(common_elements)
+
+# Print the result
+print("Elements present in all tuples at the same position:", common_elements)
 
         
