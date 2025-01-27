@@ -143,22 +143,22 @@
 # print("Unique to tuple2:", unique2)
 # print("Unique to tuple3:", unique3)
 
-# Define the three tuples
-tuple1 = (1, 2, 3, 4)
-tuple2 = (1, 5, 3, 6)
-tuple3 = (1, 9, 3, 8)
+# # Define the three tuples
+# tuple1 = (1, 2, 3, 4)
+# tuple2 = (1, 5, 3, 6)
+# tuple3 = (1, 9, 3, 8)
 
-# Use zip to iterate over corresponding elements in all tuples
-common_elements = [
-    tuple1[i]
-    for i, (a, b, c) in enumerate(zip(tuple1, tuple2, tuple3))
-    if a == b == c
-]
+# # Use zip to iterate over corresponding elements in all tuples
+# common_elements = [
+#     tuple1[i]
+#     for i, (a, b, c) in enumerate(zip(tuple1, tuple2, tuple3))
+#     if a == b == c
+# ]
 
-# Convert to a tuple if needed
-common_elements = tuple(common_elements)
+# # Convert to a tuple if needed
+# common_elements = tuple(common_elements)
 
-# Print the result
-print("Elements present in all tuples at the same position:", common_elements)
+# # Print the result
+# print("Elements present in all tuples at the same position:", common_elements)
 
         
