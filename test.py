@@ -162,3 +162,47 @@
 # print("Elements present in all tuples at the same position:", common_elements)
 
         
+##################################
+# 
+
+import os
+path = r'C:\Users\hdrastichova\OneDrive - ATS Global B.V\Desktop\osobní\python\homeworks\course-homework'
+input_file = 'input_file.txt' 
+output_file = 'output_file.txt'
+full_path1 = os.path.join(path,input_file)
+full_path2 = os.path.join(path,output_file)
+
+# def calculate_statistics(full_path1,full_path2):
+#     if not os.path.exists(input_file):
+#         print(f"File not found: {input_file}")
+#         return
+    
+    num_characters = 0
+    num_lines = 0
+    num_vowels = 0
+    num_consonants = 0
+    num_digits = 0
+    vowels = set("aeiouAEIOU")
+
+    with open(full_path1, 'r') as file:
+        for line in file:
+            num_lines += 1
+            num_characters += len(line)
+            for char in line:
+                if char.isdigit():
+                    num_digits += 1
+                elif char.isalpha():
+                    if char in vowels:
+                        num_vowels += 1
+                    else:
+                        num_consonants += 1
+
+    with open(full_path2, 'w') as file:
+        file.write(f"Number of characters: {num_characters}\n")
+        file.write(f"Number of lines: {num_lines}\n")
+        file.write(f"Number of vowels: {num_vowels}\n")
+        file.write(f"Number of consonants: {num_consonants}\n")
+        file.write(f"Number of digits: {num_digits}\n")
+    print(f"Statistics written to: {output_file}")
+
+calculate_statistics(full_path1,full_path2)
