@@ -165,44 +165,78 @@
 ##################################
 # 
 
-import os
-path = r'C:\Users\hdrastichova\OneDrive - ATS Global B.V\Desktop\osobní\python\homeworks\course-homework'
-input_file = 'input_file.txt' 
-output_file = 'output_file.txt'
-full_path1 = os.path.join(path,input_file)
-full_path2 = os.path.join(path,output_file)
+# import os
+# path = r'C:\Users\hdrastichova\OneDrive - ATS Global B.V\Desktop\osobní\python\homeworks\course-homework'
+# input_file = 'input_file.txt' 
+# output_file = 'output_file.txt'
+# full_path1 = os.path.join(path,input_file)
+# full_path2 = os.path.join(path,output_file)
 
-# def calculate_statistics(full_path1,full_path2):
-#     if not os.path.exists(input_file):
-#         print(f"File not found: {input_file}")
-#         return
+# # def calculate_statistics(full_path1,full_path2):
+# #     if not os.path.exists(input_file):
+# #         print(f"File not found: {input_file}")
+# #         return
     
-    num_characters = 0
-    num_lines = 0
-    num_vowels = 0
-    num_consonants = 0
-    num_digits = 0
-    vowels = set("aeiouAEIOU")
+#     num_characters = 0
+#     num_lines = 0
+#     num_vowels = 0
+#     num_consonants = 0
+#     num_digits = 0
+#     vowels = set("aeiouAEIOU")
 
-    with open(full_path1, 'r') as file:
-        for line in file:
-            num_lines += 1
-            num_characters += len(line)
-            for char in line:
-                if char.isdigit():
-                    num_digits += 1
-                elif char.isalpha():
-                    if char in vowels:
-                        num_vowels += 1
-                    else:
-                        num_consonants += 1
+#     with open(full_path1, 'r') as file:
+#         for line in file:
+#             num_lines += 1
+#             num_characters += len(line)
+#             for char in line:
+#                 if char.isdigit():
+#                     num_digits += 1
+#                 elif char.isalpha():
+#                     if char in vowels:
+#                         num_vowels += 1
+#                     else:
+#                         num_consonants += 1
 
-    with open(full_path2, 'w') as file:
-        file.write(f"Number of characters: {num_characters}\n")
-        file.write(f"Number of lines: {num_lines}\n")
-        file.write(f"Number of vowels: {num_vowels}\n")
-        file.write(f"Number of consonants: {num_consonants}\n")
-        file.write(f"Number of digits: {num_digits}\n")
-    print(f"Statistics written to: {output_file}")
+#     with open(full_path2, 'w') as file:
+#         file.write(f"Number of characters: {num_characters}\n")
+#         file.write(f"Number of lines: {num_lines}\n")
+#         file.write(f"Number of vowels: {num_vowels}\n")
+#         file.write(f"Number of consonants: {num_consonants}\n")
+#         file.write(f"Number of digits: {num_digits}\n")
+#     print(f"Statistics written to: {output_file}")
 
-calculate_statistics(full_path1,full_path2)
+# calculate_statistics(full_path1,full_path2)
+
+class Complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        return Complex(self.real + other.real, self.imag + other.imag)
+
+    def __sub__(self, other):
+        return Complex(self.real - other.real, self.imag - other.imag)
+
+    def __mul__(self, other):
+        real_part = self.real * other.real - self.imag * other.imag
+        imag_part = self.real * other.imag + self.imag * other.real
+        return Complex(real_part, imag_part)
+
+    def __truediv__(self, other):
+        denominator = other.real ** 2 + other.imag ** 2
+        real_part = (self.real * other.real + self.imag * other.imag) / denominator
+        imag_part = (self.imag * other.real - self.real * other.imag) / denominator
+        return Complex(real_part, imag_part)
+
+    def __repr__(self):
+        return f"{self.real} + {self.imag}i"
+
+# Example usage
+num1 = Complex(3, 2)
+num2 = Complex(1, 4)
+
+print(num1 + num2)  # Output: 4 + 6i
+print(num1 - num2)  # Output: 2 - 2i
+print(num1 * num2)  # Output: -5 + 14i
+print(num1 / num2)  # Output: 0.6470588235294118 - 0.5882352941176471i
