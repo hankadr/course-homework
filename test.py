@@ -177,143 +177,162 @@
 # #         print(f"File not found: {input_file}")
 # #         return
     
-#     num_characters = 0
-#     num_lines = 0
-#     num_vowels = 0
-#     num_consonants = 0
-#     num_digits = 0
-#     vowels = set("aeiouAEIOU")
+# #     num_characters = 0
+# #     num_lines = 0
+# #     num_vowels = 0
+# #     num_consonants = 0
+# #     num_digits = 0
+# #     vowels = set("aeiouAEIOU")
 
-#     with open(full_path1, 'r') as file:
-#         for line in file:
-#             num_lines += 1
-#             num_characters += len(line)
-#             for char in line:
-#                 if char.isdigit():
-#                     num_digits += 1
-#                 elif char.isalpha():
-#                     if char in vowels:
-#                         num_vowels += 1
-#                     else:
-#                         num_consonants += 1
+# #     with open(full_path1, 'r') as file:
+# #         for line in file:
+# #             num_lines += 1
+# #             num_characters += len(line)
+# #             for char in line:
+# #                 if char.isdigit():
+# #                     num_digits += 1
+# #                 elif char.isalpha():
+# #                     if char in vowels:
+# #                         num_vowels += 1
+# #                     else:
+# #                         num_consonants += 1
 
-#     with open(full_path2, 'w') as file:
-#         file.write(f"Number of characters: {num_characters}\n")
-#         file.write(f"Number of lines: {num_lines}\n")
-#         file.write(f"Number of vowels: {num_vowels}\n")
-#         file.write(f"Number of consonants: {num_consonants}\n")
-#         file.write(f"Number of digits: {num_digits}\n")
-#     print(f"Statistics written to: {output_file}")
+# #     with open(full_path2, 'w') as file:
+# #         file.write(f"Number of characters: {num_characters}\n")
+# #         file.write(f"Number of lines: {num_lines}\n")
+# #         file.write(f"Number of vowels: {num_vowels}\n")
+# #         file.write(f"Number of consonants: {num_consonants}\n")
+# #         file.write(f"Number of digits: {num_digits}\n")
+# #     print(f"Statistics written to: {output_file}")
 
-# calculate_statistics(full_path1,full_path2)
+# # calculate_statistics(full_path1,full_path2)
 
-# class Complex:
-#     def __init__(self, real, imag):
-#         self.real = real
-#         self.imag = imag
+# # class Complex:
+# #     def __init__(self, real, imag):
+# #         self.real = real
+# #         self.imag = imag
 
-#     def __add__(self, other):
-#         return Complex(self.real + other.real, self.imag + other.imag)
+# #     def __add__(self, other):
+# #         return Complex(self.real + other.real, self.imag + other.imag)
 
-#     def __sub__(self, other):
-#         return Complex(self.real - other.real, self.imag - other.imag)
+# #     def __sub__(self, other):
+# #         return Complex(self.real - other.real, self.imag - other.imag)
 
-#     def __mul__(self, other):
-#         real_part = self.real * other.real - self.imag * other.imag
-#         imag_part = self.real * other.imag + self.imag * other.real
-#         return Complex(real_part, imag_part)
+# #     def __mul__(self, other):
+# #         real_part = self.real * other.real - self.imag * other.imag
+# #         imag_part = self.real * other.imag + self.imag * other.real
+# #         return Complex(real_part, imag_part)
 
-#     def __truediv__(self, other):
-#         denominator = other.real ** 2 + other.imag ** 2
-#         real_part = (self.real * other.real + self.imag * other.imag) / denominator
-#         imag_part = (self.imag * other.real - self.real * other.imag) / denominator
-#         return Complex(real_part, imag_part)
+# #     def __truediv__(self, other):
+# #         denominator = other.real ** 2 + other.imag ** 2
+# #         real_part = (self.real * other.real + self.imag * other.imag) / denominator
+# #         imag_part = (self.imag * other.real - self.real * other.imag) / denominator
+# #         return Complex(real_part, imag_part)
 
-#     def __repr__(self):
-#         return f"{self.real} + {self.imag}i"
+# #     def __repr__(self):
+# #         return f"{self.real} + {self.imag}i"
 
-# # Example usage
-# num1 = Complex(3, 2)
-# num2 = Complex(1, 4)
+# # # Example usage
+# # num1 = Complex(3, 2)
+# # num2 = Complex(1, 4)
 
-# print(num1 + num2)  # Output: 4 + 6i
-# print(num1 - num2)  # Output: 2 - 2i
-# print(num1 * num2)  # Output: -5 + 14i
-# print(num1 / num2)  # Output: 0.6470588235294118 - 0.5882352941176471i
+# # print(num1 + num2)  # Output: 4 + 6i
+# # print(num1 - num2)  # Output: 2 - 2i
+# # print(num1 * num2)  # Output: -5 + 14i
+# # print(num1 / num2)  # Output: 0.6470588235294118 - 0.5882352941176471i
 
 
-class StringStack:
-    def __init__(self,size):
-        self.size = size
-        self.stack = []
+# class StringStack:
+#     def __init__(self,size):
+#         self.size = size
+#         self.stack = []
 
-    def push(self,string):
-        self.stack.append(string)
-        return (f'{string} added to the stack.')
+#     def push(self,string):
+#         self.stack.append(string)
+#         return (f'{string} added to the stack.')
     
-    def pop(self):
-        if not self.stack:
-            return "Stack is empty."
-        return self.stack.pop()
+#     def pop(self):
+#         if not self.stack:
+#             return "Stack is empty."
+#         return self.stack.pop()
     
-    def count(self):
-        return len(self.stack)
+#     def count(self):
+#         return len(self.stack)
     
-    def is_empty(self):
-        return len(self.stack) == 0
+#     def is_empty(self):
+#         return len(self.stack) == 0
     
-    def is_full(self):
-        return len(self.stack) == self.size
+#     def is_full(self):
+#         return len(self.stack) == self.size
     
-    def clear(self):
-        return self.stack.clear()
+#     def clear(self):
+#         return self.stack.clear()
     
-    def peek(self):
-        if not self.stack:
-            return "Stack is empty."
-        return self.stack[-1]
+#     def peek(self):
+#         if not self.stack:
+#             return "Stack is empty."
+#         return self.stack[-1]
     
-def menu():
-    size = int(input("Enter the size of the stack: "))
-    stack = StringStack(size)
+# def menu():
+#     size = int(input("Enter the size of the stack: "))
+#     stack = StringStack(size)
     
-    while True:
-        print("\nMenu:")
-        print("1. Push a string to stack")
-        print("2. Pop a string from stack")
-        print("3. Peek at the top string")
-        print("4. Check if stack is empty")
-        print("5. Check if stack is full")
-        print("6. Get the number of strings in stack")
-        print("7. Clear the stack")
-        print("8. Exit")
+#     while True:
+#         print("\nMenu:")
+#         print("1. Push a string to stack")
+#         print("2. Pop a string from stack")
+#         print("3. Peek at the top string")
+#         print("4. Check if stack is empty")
+#         print("5. Check if stack is full")
+#         print("6. Get the number of strings in stack")
+#         print("7. Clear the stack")
+#         print("8. Exit")
         
-        choice = input("Choose an option: ")
+#         choice = input("Choose an option: ")
         
-        if choice == "1":
-            string = input("Enter a string to push: ")
-            stack.push(string)
-        elif choice == "2":
-            popped = stack.pop()
-            if popped is not None:
-                print(f'Popped: "{popped}"')
-        elif choice == "3":
-            top = stack.peek()
-            if top is not None:
-                print(f'Top of stack: "{top}"')
-        elif choice == "4":
-            print("Stack is empty." if stack.is_empty() else "Stack is not empty.")
-        elif choice == "5":
-            print("Stack is full." if stack.is_full() else "Stack is not full.")
-        elif choice == "6":
-            print(f'Number of strings in stack: {stack.count()}')
-        elif choice == "7":
-            stack.clear()
-        elif choice == "8":
-            print("Exiting...")
-            break
-        else:
-            print("Invalid choice, please try again.")
+#         if choice == "1":
+#             string = input("Enter a string to push: ")
+#             stack.push(string)
+#         elif choice == "2":
+#             popped = stack.pop()
+#             if popped is not None:
+#                 print(f'Popped: "{popped}"')
+#         elif choice == "3":
+#             top = stack.peek()
+#             if top is not None:
+#                 print(f'Top of stack: "{top}"')
+#         elif choice == "4":
+#             print("Stack is empty." if stack.is_empty() else "Stack is not empty.")
+#         elif choice == "5":
+#             print("Stack is full." if stack.is_full() else "Stack is not full.")
+#         elif choice == "6":
+#             print(f'Number of strings in stack: {stack.count()}')
+#         elif choice == "7":
+#             stack.clear()
+#         elif choice == "8":
+#             print("Exiting...")
+#             break
+#         else:
+#             print("Invalid choice, please try again.")
 
-if __name__ == "__main__":
-    menu()
+# if __name__ == "__main__":
+#     menu()
+
+#Given three integers, determine how many of them are equal to each other. 
+#The program must print one of these numbers: 3 (if all are the same), 
+# 2 (if two of them are equal to each other and the third is different) or 0 (if all numbers are different).
+
+# a=int(input('first: '))
+# b=int(input('second: '))
+# c=int(input('third: '))
+# if a == b and b==c and a==c:
+#     print(3)
+# elif a != b and b!=c and a!=c:
+#     print(0)
+# else:
+#     print(2)
+
+a=int(input('first: '))
+b=int(input('second: '))
+for _ in range(a,b+1):
+    print(_)
